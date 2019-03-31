@@ -9,9 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cadastro de Clientes</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Adicionar Clientes</h1>
+        <form action="index.jsp">
+            Nome:
+            <br/><input type="text" name="nome"/>
+            <br/>Telefone:
+            <br/><input type="text" name="fone"/>
+            <br/>E-mail:
+            <br/><input type="text" name="email"/>
+            <hr/>
+            <h2>Deseja incluir o novo contato?</h2>
+            <input type="submit" name="adicionar" value="Sim"/>
+            <input type="submit" name="adicionar" value="Não"/>
+        </form>
     </body>
 </html>
