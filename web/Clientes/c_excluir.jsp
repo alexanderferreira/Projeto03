@@ -30,16 +30,12 @@
                    <span class="caret"></span></a>
                    <ul class="dropdown-menu">
                      <li><a href="c_incluir.jsp">Incluir</a></li>
-                     <li><a href="c_alterar.jsp">Alterar</a></li>
-                     <li><a href="c_excluir.jsp">Excluir</a></li>
                    </ul>
                  <li>
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fornecedores
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                      <li><a href="Fornecedores/f_incluir.jsp">Incluir</a></li>
-                     <li><a href="Fornecedores/f_alterar.jsp">Alterar</a></li>
-                     <li><a href="Fornecedores/f_excluir.jsp">Excluir</a></li>
                    </ul>
                  </li>
                </ul>
