@@ -12,7 +12,7 @@
     if(request.getParameter("adicionar")!=null){
         if(request.getParameter("adicionar").equals("Sim")){
             Clientes c = new Clientes();
-            c.setNomecliente(request.getParameter("nomecliente"));
+            c.setNomecliente(request.getParameter("nome"));
             c.setCpf(request.getParameter("cpf"));
             c.setRg(request.getParameter("rg"));
             c.setEmailcliente(request.getParameter("emailcliente"));
@@ -27,7 +27,7 @@
         if(request.getParameter("alterar").equals("Sim")){
             int index = Integer.parseInt(request.getParameter("index"));
             Clientes c = new Clientes();
-            c.setNomecliente(request.getParameter("nomecliente"));
+            c.setNomecliente(request.getParameter("nome"));
             c.setCpf(request.getParameter("cpf"));
             c.setRg(request.getParameter("rg"));
             c.setEmailcliente(request.getParameter("emailcliente"));

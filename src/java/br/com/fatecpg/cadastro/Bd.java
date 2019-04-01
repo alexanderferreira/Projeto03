@@ -11,8 +11,6 @@ import java.util.ArrayList;
  */
 public class Bd {
     public static ArrayList<Clientes> clientes;
-    public static ArrayList<Fornecedores> fornecedores;
-    
     public static ArrayList<Clientes> getCliente(){
         if(clientes==null){
             
@@ -21,8 +19,8 @@ public class Bd {
             c1.setNomecliente("Roberto Carlos");
             c1.setCpf("111.222.333-44");
             c1.setRg("11.222.333-4");
-            c1.setTelefonecliente("+55 13 99111-1111");
             c1.setEmailcliente("cliente@empresa.com");
+            c1.setTelefonecliente("+55 13 99111-1111");
             c1.setEnderecocliente("rua sem nome");
             clientes.add(c1);
             
@@ -30,14 +28,15 @@ public class Bd {
             c2.setNomecliente("Roberto Carlos");
             c2.setCpf("111.222.333-44");
             c2.setRg("11.222.333-4");
-            c2.setTelefonecliente("+55 13 99111-1111");
             c2.setEmailcliente("cliente@empresa.com");
+            c2.setTelefonecliente("+55 13 99111-1111");
             c2.setEnderecocliente("rua sem nome");
             clientes.add(c2);
         }
         return clientes;
     }
     
+    public static ArrayList<Fornecedores> fornecedores;   
     public static ArrayList<Fornecedores> getFornecedores(){
         if(fornecedores==null){
             
