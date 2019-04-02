@@ -28,12 +28,14 @@
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
                    <span class="caret"></span></a>
                    <ul class="dropdown-menu">
+                     <li><a href="index.jsp">Lista</a></li>
                      <li><a href="c_incluir.jsp">Incluir</a></li>
                    </ul>
                  <li>
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fornecedores
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                     <li><a href="Fornecedores/index.jsp">Incluir</a></li>
                      <li><a href="Fornecedores/f_incluir.jsp">Incluir</a></li>
                    </ul>
                  </li>
@@ -45,7 +47,7 @@
                 <h1>Alterar registro de Clientes</h1>
                 <%int index = Integer.parseInt(request.getParameter("index"));%>
                 <%Clientes c = Bd.getCliente().get(index);%>
-                <form action="../index.jsp">
+                <form action="index.jsp">
                     Nome do Cliente:
                     <br/><input type="text" name="nomecliente" size="40" value="<%=c.getNomecliente()%>"/>
                     <br/>CPF:
@@ -62,7 +64,7 @@
                     <h2>Deseja alterar o cliente?</h2>
                     <input type="submit" name="alterar" value="Sim"/>
                     <input type="submit" name="alterar" value="Não"/>
-                    <input type="hidden" name="index" value="<%=index%>"
+                    <input type="hidden" name="index" value="<%=index%>"/>
                 </form>
             </div>
         </body>

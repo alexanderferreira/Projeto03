@@ -3,7 +3,6 @@
     Created on : 31/03/2019, 14:33:17
     Author     : alexandersantos
 --%>
-<%@page import="br.com.fatecpg.cadastro.Clientes"%>
 <%@page import="br.com.fatecpg.cadastro.Fornecedores"%>
 <%@page import="br.com.fatecpg.cadastro.Bd"%>
 
@@ -12,14 +11,14 @@
 <%
     if(request.getParameter("adicionar")!=null){
         if(request.getParameter("adicionar").equals("Sim")){
-            Clientes c = new Clientes();
-            c.setNomecliente(request.getParameter("nomecliente"));
-            c.setCpf(request.getParameter("cpf"));
-            c.setRg(request.getParameter("rg"));
-            c.setEmailcliente(request.getParameter("emailcliente"));
-            c.setTelefonecliente(request.getParameter("telefonecliente"));
-            c.setEnderecocliente(request.getParameter("enderecocliente"));
-            Bd.getCliente().add(c);
+            Fornecedores c = new Fornecedores();
+            c.setNomefornecedor(request.getParameter("nomefornecedor"));
+            c.setRazao(request.getParameter("razao"));
+            c.setCnpj(request.getParameter("cnpj"));
+            c.setEmailfornecedor(request.getParameter("emailfornecedor"));
+            c.setTelefonefornecedor(request.getParameter("telefonefornecedor"));
+            c.setEnderecofornecedor(request.getParameter("enderecofornecedor"));
+            Bd.getFornecedores().add(c);
         }
         response.sendRedirect(request.getRequestURI());
     }
@@ -27,28 +26,28 @@
     if(request.getParameter("alterar")!=null){
         if(request.getParameter("alterar").equals("Sim")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Clientes c = new Clientes();
-            c.setNomecliente(request.getParameter("nomecliente"));
-            c.setCpf(request.getParameter("cpf"));
-            c.setRg(request.getParameter("rg"));
-            c.setEmailcliente(request.getParameter("emailcliente"));
-            c.setTelefonecliente(request.getParameter("telefonecliente"));
-            c.setEnderecocliente(request.getParameter("enderecocliente"));
-            Bd.getCliente().set(index,c);
+            Fornecedores c = new Fornecedores();
+            c.setNomefornecedor(request.getParameter("nomefornecedor"));
+            c.setRazao(request.getParameter("razao"));
+            c.setCnpj(request.getParameter("cnpj"));
+            c.setEmailfornecedor(request.getParameter("emailfornecedor"));
+            c.setTelefonefornecedor(request.getParameter("telefonefornecedor"));
+            c.setEnderecofornecedor(request.getParameter("enderecofornecedor"));
+            Bd.getFornecedores().set(index,c);
             }
             response.sendRedirect(request.getRequestURI());
         }
     if(request.getParameter("excluir")!=null){
         if(request.getParameter("excluir").equals("Sim")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Bd.getCliente().remove(index);
+            Bd.getFornecedores().remove(index);
         }
         response.sendRedirect(request.getRequestURI());
     }
 %>
 <html lang="en">
 <head>
-  <title>Cadastro de Clientes</title>
+  <title>Cadastro de Fornecedores</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -62,59 +61,58 @@
                  <a class="navbar-brand" href="#">SCCF</a>
                </div>
                <ul class="nav navbar-nav">
-                 <li class="active"><a href="../index.jsp">Home</a></li>
+                 <li class="active"><a href="#">Home</a></li>
                  <li class="dropdown">
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
                    <span class="caret"></span></a>
                    <ul class="dropdown-menu">
-                     <li><a href="index.jsp">Lista</a></li>
-                     <li><a href="c_incluir.jsp">Incluir</a></li>
+                        <li><a href="../Clientes/index.jsp">Lista</a></li>
+                        <li><a href="../Clientes/c_incluir.jsp">Incluir</a></li>
                    </ul>
                  <li>
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fornecedores
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                     <li><a href="../Fornecedores/index.jsp">Lista</a></li>
-                     <li><a href="../Fornecedores/f_incluir.jsp">Incluir</a></li>
+                     <li><a href="index.jsp">Lista</a></li>  
+                     <li><a href="f_incluir.jsp">Incluir</a></li>
                    </ul>
                  </li>
                </ul>
              </div>
            </nav>
             <div class="container">
-              <h1>Sistema de Cadastro - Clientes</h1>
+              <h1>Sistema de Cadastro - Fornecedores</h1>
+              <p>Sistema para cadastro de todos os cliente e fornecedores.</p>
               </br>
               </br>
-              <table border="1" width="80%">
+                <table border="1" width="80%">
                     <tr>
                         <th>Índice</th>
-                        <th>Nome</th>
-                        <th>CPF</th>
-                        <th>RG</th>
+                        <th>Fornecedor</th>
+                        <th>CNPJ</th>
+                        <th>Razão Social</th>
                         <th>E-mail</th>
-                        <th>Telefone</th>
                         <th>Endereço</th>
+                        <th>Telefone</th>
                         <th>Comandos</th>
                     </tr>
-                    <%for(Clientes c: Bd.getCliente()){%>
-                        <%int index = Bd.getCliente().indexOf(c);%>
+                    <%for(Fornecedores c: Bd.getFornecedores()){%>
+                        <%int index = Bd.getFornecedores().indexOf(c);%>
                         <tr>
                             <td><%=index%></td>
-                            <td><%=c.getNomecliente()%></td>
-                            <td><%=c.getCpf()%></td>
-                            <td><%=c.getRg()%></td>
-                            <td><%=c.getEmailcliente()%></td>
-                            <td><%=c.getTelefonecliente()%></td>
-                            <td><%=c.getEnderecocliente()%></td>
+                            <td><%=c.getNomefornecedor()%></td>
+                            <td><%=c.getCnpj()%></td>
+                            <td><%=c.getRazao()%></td>
+                            <td><%=c.getEmailfornecedor()%></td>
+                            <td><%=c.getEnderecofornecedor()%></td>
+                            <td><%=c.getTelefonefornecedor()%></td>
                             <td>
-                                <a href="c_alterar.jsp?index=<%=index%>">Alterar</a>
-                                <a href="c_excluir.jsp?index=<%=index%>">Excluir</a>
+                                <a href="f_alterar.jsp?index=<%=index%>">Alterar</a>
+                                <a href="f_excluir.jsp?index=<%=index%>">Excluir</a>
                             </td>
                         </tr>
                         <%}%>
                 </table>
-                </br>
-                </br>
             </div>
             
         </body>

@@ -29,12 +29,14 @@
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
                    <span class="caret"></span></a>
                    <ul class="dropdown-menu">
+                     <li><a href="index.jsp">Lista</a></li>
                      <li><a href="c_incluir.jsp">Incluir</a></li>
                    </ul>
                  <li>
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fornecedores
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                     <li><a href="Fornecedores/index.jsp">Incluir</a></li>
                      <li><a href="Fornecedores/f_incluir.jsp">Incluir</a></li>
                    </ul>
                  </li>
@@ -45,7 +47,7 @@
               <h1>Excluir Clientes</h1>
                 <%int index = Integer.parseInt(request.getParameter("index"));%>
                 <%Clientes c = Bd.getCliente().get(index);%>
-                <form action="../index.jsp" method="post">
+                <form action="index.jsp" method="post">
                     <b>Índice: <u><%=index%></u></b>
                     <b>Nome: <u><%=c.getNomecliente()%></u></b>
                     <b>CPF: <u><%=c.getCpf()%></u></b>
@@ -57,7 +59,7 @@
                     <h2>Deseja excluir o cliente?</h2>
                     <input type="submit" name="excluir" value="Sim"/>
                     <input type="submit" name="excluir" value="Não"/>
-                    <input type="hidden" name="index" value="<%=index%>"
+                    <input type="hidden" name="index" value="<%=index%>"/>
                 </form>
             </div>
         </body>

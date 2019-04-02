@@ -27,12 +27,14 @@
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
                    <span class="caret"></span></a>
                    <ul class="dropdown-menu">
+                     <li><a href="index.jsp">Lista</a></li>
                      <li><a href="c_incluir.jsp">Incluir</a></li>
                    </ul>
                  <li>
                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fornecedores
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                     <li><a href="Fornecedores/index.jsp">Incluir</a></li>
                      <li><a href="Fornecedores/f_incluir.jsp">Incluir</a></li>
                    </ul>
                  </li>
@@ -41,7 +43,7 @@
            </nav>
             <div class="container">
               <h1>Cadastrar Clientes</h1>
-                <form action="../index.jsp">
+                <form action="index.jsp">
                     Nome do Cliente:
                     <br/><input type="text" name="nomecliente" size="40"/>
                     <br/>CPF:
